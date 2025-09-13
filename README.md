@@ -17,11 +17,6 @@ Root training / evaluation scripts:
 - `run_prop_admm.py`                     : ADMM with proposed encoder-based initialization (adversarial images).
 - `run_spc_admm.py`                      : Baseline ADMM on SPI measurements.
 - `run_prop_spc_admm.py`                 : ADMM with proposed initialization on SPI.
-- `run_ganinv_train.py` / `run_ganinv_test.py`                        : Standard GAN inversion train / test.
-- `run_ganinv_train_adversarial.py` / `run_ganinv_test_adversarial.py`: GAN inversion under adversarial corruption.
-- `run_ganinv_train_spi.py` / `run_ganinv_test_spi.py`                : GAN inversion for SPI.
-- `build_adversarial_*.py`                                           : Build & save adversarial train/valid/test datasets.
-- `build_spi_*.py`                                                   : Build SPI measurement datasets.
 
 Core models & algorithms:
 - `autoencoder.py`              : Convolutional encoder + frozen GAN decoder + Lightning modules (MNIST / SPI).
@@ -29,39 +24,13 @@ Core models & algorithms:
 - `algorithms/optical_encoders.py` : `LinearSPC` single-pixel forward / inverse operators.
 - `src/models/`                 : Generator definitions, blocks, loader utilities.
 - `utils/callbacks.py`          : Lightning callbacks (epoch logging, step override).
-- `utils/exp_setting.py`        : Experiment directory + reproducible command capture.
-
-Utilities / supporting code:
-- `src/util/attack.py`, `attack_2.py` : Adversarial perturbation generation / dataloader wrapping.
-- `src/util/evaluation.py`            : Evaluation helpers (if present).
-- `src/functions.py`, `src/proj_l1.py`, `src/augmented_lagrangian.py` : Mathematical operators / optimization pieces for ADMM.
-- `algorithms/libs/ordering/*.py`     : Sensing matrix constructions (zig_zag, hadamard, cake_cutting, etc.).
-
-Results layout (examples):
-- `results/pretrained_adversarial/...` : Pretrained autoencoder checkpoints (different noise std / activations).
-- `results/prop_init_spi/...`          : SPI proposed-init experiments (various compression ratios & matrices).
-- `results/<experiment>/<name>/checkpoints/` : Saved weights (`epoch=...step=...ckpt`).
-- `results/<experiment>/<name>/csv/`          : Tabular metric logs.
-- `results/<experiment>/<name>/model_info.txt`: Reproducible command line.|
-
+  
 ## Installation
 1. Clone the repository:
 	```bash
 	git clone https://github.com/juliogr7/PEADMM.git
 	cd PEADMM
 	```
-
-## Main Arguments (Summary)
-Common parameters (see each script for full list):
-- `--std`                : Noise std / adversarial severity.
-- `--z-dim`              : Latent dimensionality.
-- `--gamma`, `--beta`, `--sigma` : ADMM hyperparameters.
-- `--max-iter`           : ADMM iterations (encoder training uses epochs separately).
-- `--elu_encoder`, `--elu_gan` : Activation choices in encoder / decoder.
-- `--cr`                 : Compression ratio (SPI).
-- `--sensing-matrix`     : Sensing matrix type (zig_zag, cake_cutting, random_binary).
-- `--n-images`           : Number of images processed in ADMM experiments.
-- `--batch-size`         : Mini‑batch size (vectorized latent updates).
 
 ## Latent Initialization Modes
 - Baseline ADMM: initial `z ~ N(0, I)`; reconstruction may start from arbitrary generator manifold region.
