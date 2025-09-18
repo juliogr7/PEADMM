@@ -1,0 +1,18 @@
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+             Model information             
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+python run_ganinv_train_adversarial.py \
+       --save-name autoencoder_digit_mnist_std02 \
+       --dataset-name mnist \
+       --data-dir data/attacked_mnist \
+       --image-size 28 \
+       --num-bands 1 \
+       --num-channels 1 \
+       --max-epochs 77 \
+       --batch-size 256 \
+       --lr 0.001 \
+       --patient 150 \
+       --std 0.1 \
+       --elu-encoder False \
+       --elu-gan True \
+       --num-workers 6 \
