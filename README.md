@@ -38,17 +38,21 @@ Core models & algorithms:
 - Proposed ADMM: `z0 = Encoder(x0)` where `x0` is an adversarial image or an SPI backprojection / inverse.
 
 ## Citation
-If this work is useful, please cite
+If this work is useful, please cite:
+
+```bibtex
 @INPROCEEDINGS{11156506,
-  author={Gutierrez-Rengifo, Julio and Barrios, Jose and Urrea, Sergio and Fonseca, Karen and Martinez, Emmanuel and Arguello, Henry},
-  booktitle={2025 XXV Symposium of Image, Signal Processing, and Artificial Vision (STSIVA)}, 
-  title={Learned Latent Space Initialization for ADMM with Generative Priors}, 
-  year={2025},
-  volume={},
-  number={},
-  pages={1-5},
-  keywords={Sensitivity;Inverse problems;Signal processing algorithms;Signal processing;Approximation algorithms;Convex functions;Generators;Stability analysis;Standards;Convergence;ADMM;Generative priors;latent space;algorithm initialization;inverse problems},
-  doi={10.1109/STSIVA66383.2025.11156506}}
+  author    = {Gutierrez-Rengifo, Julio and Barrios, Jose and Urrea, Sergio and Fonseca, Karen and Martinez, Emmanuel and Arguello, Henry},
+  booktitle = {2025 XXV Symposium of Image, Signal Processing, and Artificial Vision (STSIVA)},
+  title     = {Learned Latent Space Initialization for ADMM with Generative Priors},
+  year      = {2025},
+  volume	= {},
+  number	= {},
+  pages     = {1-5},
+  keywords  = {Sensitivity; Inverse problems; Signal processing algorithms; Signal processing; Approximation algorithms; Convex functions; Generators; Stability analysis; Standards; Convergence; ADMM; Generative priors; latent space; algorithm initialization; inverse problems},
+  doi       = {10.1109/STSIVA66383.2025.11156506}
+}
+```
 
 ## License
 This repository is released under the MIT License (see `LICENSE`).
